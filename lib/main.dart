@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(Basketball());
+  runApp(const Basketball());
 }
 
-class Basketball extends StatelessWidget {
+class Basketball extends StatefulWidget {
+  const Basketball({super.key});
+
+  @override
+  State<Basketball> createState() => _BasketballState();
+}
+
+class _BasketballState extends State<Basketball> {
+  int teamAPoints = 0;
+
+  int teamBPoints = 0;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -37,8 +48,8 @@ class Basketball extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        '0',
-                        style: TextStyle(
+                        '$teamAPoints',
+                        style: const TextStyle(
                           fontSize: 90,
                         ),
                       ),
@@ -48,9 +59,12 @@ class Basketball extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5.0),
                           ),
-                          fixedSize: Size(140, 20),
+                          fixedSize: const Size(140, 20),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          teamAPoints++;
+                          setState(() {});
+                        },
                         child: const Text(
                           'add 1 point',
                           style: TextStyle(
@@ -68,9 +82,12 @@ class Basketball extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5.0),
                           ),
-                          fixedSize: Size(140, 20),
+                          fixedSize: const Size(140, 20),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          teamAPoints += 2;
+                          setState(() {});
+                        },
                         child: const Text(
                           'add 2 points',
                           style: TextStyle(
@@ -88,9 +105,12 @@ class Basketball extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5.0),
                           ),
-                          fixedSize: Size(140, 20),
+                          fixedSize: const Size(140, 20),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          teamAPoints += 3;
+                          setState(() {});
+                        },
                         child: const Text(
                           'add 3 points',
                           style: TextStyle(
@@ -117,8 +137,8 @@ class Basketball extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        '0',
-                        style: TextStyle(
+                        '$teamBPoints',
+                        style: const TextStyle(
                           fontSize: 90,
                         ),
                       ),
@@ -128,9 +148,12 @@ class Basketball extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5.0),
                           ),
-                          fixedSize: Size(140, 20),
+                          fixedSize: const Size(140, 20),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          teamBPoints++;
+                          setState(() {});
+                        },
                         child: const Text(
                           'add 1 point',
                           style: TextStyle(
@@ -148,9 +171,12 @@ class Basketball extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5.0),
                           ),
-                          fixedSize: Size(140, 20),
+                          fixedSize: const Size(140, 20),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          teamBPoints += 2;
+                          setState(() {});
+                        },
                         child: const Text(
                           'add 2 points',
                           style: TextStyle(
@@ -168,9 +194,12 @@ class Basketball extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5.0),
                           ),
-                          fixedSize: Size(140, 20),
+                          fixedSize: const Size(140, 20),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          teamBPoints += 3;
+                          setState(() {});
+                        },
                         child: const Text(
                           'add 3 points',
                           style: TextStyle(
@@ -193,11 +222,15 @@ class Basketball extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5.0),
                 ),
-                fixedSize: Size(140, 20),
+                fixedSize: const Size(140, 20),
               ),
-              onPressed: () {},
+              onPressed: () {
+                teamAPoints = 0;
+                teamBPoints = 0;
+                setState(() {});
+              },
               child: const Text(
-                'add 1 point',
+                'Reset',
                 style: TextStyle(
                   fontSize: 15,
                   color: Colors.white,
