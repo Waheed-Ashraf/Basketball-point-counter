@@ -62,8 +62,9 @@ class _BasketballState extends State<Basketball> {
                           fixedSize: const Size(140, 20),
                         ),
                         onPressed: () {
-                          teamAPoints++;
-                          setState(() {});
+                          setState(() {
+                            teamAPoints++;
+                          });
                         },
                         child: const Text(
                           'add 1 point',
@@ -85,8 +86,9 @@ class _BasketballState extends State<Basketball> {
                           fixedSize: const Size(140, 20),
                         ),
                         onPressed: () {
-                          teamAPoints += 2;
-                          setState(() {});
+                          setState(() {
+                            teamAPoints += 2;
+                          });
                         },
                         child: const Text(
                           'add 2 points',
@@ -108,8 +110,9 @@ class _BasketballState extends State<Basketball> {
                           fixedSize: const Size(140, 20),
                         ),
                         onPressed: () {
-                          teamAPoints += 3;
-                          setState(() {});
+                          setState(() {
+                            teamAPoints += 3;
+                          });
                         },
                         child: const Text(
                           'add 3 points',
@@ -151,8 +154,9 @@ class _BasketballState extends State<Basketball> {
                           fixedSize: const Size(140, 20),
                         ),
                         onPressed: () {
-                          teamBPoints++;
-                          setState(() {});
+                          setState(() {
+                            teamBPoints++;
+                          });
                         },
                         child: const Text(
                           'add 1 point',
@@ -174,8 +178,9 @@ class _BasketballState extends State<Basketball> {
                           fixedSize: const Size(140, 20),
                         ),
                         onPressed: () {
-                          teamBPoints += 2;
-                          setState(() {});
+                          setState(() {
+                            teamBPoints += 2;
+                          });
                         },
                         child: const Text(
                           'add 2 points',
@@ -197,8 +202,9 @@ class _BasketballState extends State<Basketball> {
                           fixedSize: const Size(140, 20),
                         ),
                         onPressed: () {
-                          teamBPoints += 3;
-                          setState(() {});
+                          setState(() {
+                            teamBPoints += 3;
+                          });
                         },
                         child: const Text(
                           'add 3 points',
@@ -225,9 +231,10 @@ class _BasketballState extends State<Basketball> {
                 fixedSize: const Size(140, 20),
               ),
               onPressed: () {
-                teamAPoints = 0;
-                teamBPoints = 0;
-                setState(() {});
+                setState(() {
+                  teamAPoints = 0;
+                  teamBPoints = 0;
+                });
               },
               child: const Text(
                 'Reset',
